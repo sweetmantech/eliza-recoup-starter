@@ -11,7 +11,7 @@ export const character: Character = {
   name: "Eliza",
   plugins: [agentKitPlugin],
   // clients: [],
-  // modelProvider: ModelProviderName.OPENAI,
+  modelProvider: ModelProviderName.OPENROUTER,
   // settings: {
   //     secrets: {},
   //     voice: {
