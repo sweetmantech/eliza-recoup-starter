@@ -115,4 +115,25 @@ If needed, you can further use the `web_scraper.py` file to scrape the web page 
 
 # Scratchpad
 
+## Current Task: Add a Single GET Endpoint
+
+Goal: Add one GET endpoint to the repository with minimal changes.
+
+### Analysis:
+
+1. Looking at src/index.ts, we see DirectClient is already initialized and used
+2. Created a dedicated module for API endpoints in src/lib/api.ts
+3. This structure will make it easier to add more endpoints later
+
+### Minimum Steps Required:
+
+[X] 1. Create src/lib/api.ts for API endpoint definitions
+[X] 2. Add GET /api/status endpoint function
+[X] 3. Wire up the endpoint setup in src/index.ts
+[ ] 4. Test the endpoint
+
+### Next Action:
+
+Test the endpoint by starting the server and making a request to http://localhost:3000/api/status
+
 NEW
