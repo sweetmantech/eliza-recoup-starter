@@ -23,6 +23,7 @@ import {
   parseArguments,
 } from "./config/index.ts";
 import { initializeDatabase } from "./database/index.ts";
+import { setupApiEndpoints } from "./lib/api.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -131,14 +132,8 @@ const startAgents = async () => {
   let serverPort = parseInt(settings.SERVER_PORT || "3000");
   const args = parseArguments();
 
-  // Add GET /status endpoint
-  directClient.app.get("/api/status", (req, res) => {
-    res.json({
-      status: "ok",
-      timestamp: new Date().toISOString(),
-      version: "3.3.3",
-    });
-  });
+  // Setup API endpoints
+  setupApiEndpoints(directClient);
 
   let charactersArg = args.characters || args.character;
   let characters = [character];
